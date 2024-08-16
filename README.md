@@ -1,3 +1,3 @@
 # Диплом
 
-- [Reference](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+-  [Reference](https://aleksandr2639.github.io/diplom_train-tickets)
