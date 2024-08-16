@@ -1,0 +1,73 @@
+@import '../../scss/mixins';
+.reviews {
+   padding: 9.5rem 16.3125rem 17.375rem 16.125rem;
+   min-width: 100%;
+   max-width: 100%;
+   min-height: 75rem;
+   background: var(--color-main-light);
+   color: var(--color-main-dark);
+   &__title {
+      @include title;
+   }
+   &__cards {
+      margin-top: 8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5.3125rem;
+   }
+}
+
+.card {
+   display: flex;
+
+   &__avatar {
+      width: 25rem;
+      height: 25rem;
+      margin-right: 2.2rem;
+      position: relative;
+      > img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+
+   &__content {
+      align-self: center;
+   }
+   &__title {
+      @include font(
+                      var(--fw-5),
+                      var(--fs-24),
+                      var(--fh-28),
+                      var(--color-main-dark)
+      );
+   }
+   &__text {
+      width: 40rem;
+      margin-top: 3rem;
+      @include font(var(--fw-3), var(--fs-18), var(--fh-21), var(--color-grey));
+      font-style: italic;
+      & span {
+         position: relative;
+         > img {
+            width: 1.5rem;
+         }
+      }
+   }
+   &__open {
+      position: absolute;
+      top: -0.5rem;
+      left: -1rem;
+   }
+
+   &__close {
+      position: absolute;
+      right: -3rem;
+      bottom: -0.5rem;
+   }
+}
+

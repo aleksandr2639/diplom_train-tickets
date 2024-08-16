@@ -1,0 +1,77 @@
+@import '../../../scss/mixins';
+@mixin h3 {
+   > h3 {
+      padding-bottom: 3rem;
+      color: var(--color-main-light);
+   }
+}
+
+.footer {
+   @include font(
+      var(--fw-4),
+      var(--fs-24),
+      var(--fh-28),
+      var(--color-main-light)
+   );
+   background-color: var(--color-main-dark);
+}
+.wrapper {
+   display: flex;
+   justify-content: space-between;
+   padding: 5rem 34rem;
+}
+
+.contact {
+   @include h3;
+}
+
+.subscription {
+   @include h3;
+
+   &__subheader {
+      @include font(
+         var(--fw-4),
+         var(--fs-24),
+         var(--fh-28),
+         var(--color-main-light)
+      );
+      margin-bottom: 2rem;
+   }
+
+   .loading {
+      margin-top: 0.5rem;
+      background-color: var(--color-hover);
+      color: var(--color-secondary-dark);
+   }
+
+   .error {
+      margin-top: 0.5rem;
+      background-color: var(--color-error);
+   }
+}
+
+.inputGroup {
+   width: 45rem;
+
+   &__input {
+      & {
+         padding: 1.3rem;
+         width: 30rem;
+      }
+   }
+   &__btn {
+      @include button-white;
+      & {
+         text-transform: uppercase;
+         padding: 1.3rem;
+         margin-left: 3.3rem;
+      }
+   }
+}
+
+.subscribe {
+   @include h3;
+   & {
+      margin-top: 4.5rem;
+   }
+}

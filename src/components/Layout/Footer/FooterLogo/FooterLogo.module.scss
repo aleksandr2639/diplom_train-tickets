@@ -1,0 +1,20 @@
+@import '../../../../scss/mixins';
+
+.bottomNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3.5rem;
+  padding-right: 26rem;
+  border-top: 0.1rem solid var(--color-secondary-light);
+
+  &__icon {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  &__year {
+    @include font-no-color(var(--fw-3), var(--fs-24), var(--fh-28));
+    text-transform: uppercase;
+  }
+}

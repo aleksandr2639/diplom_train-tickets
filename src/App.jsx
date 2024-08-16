@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.scss';
+
+import MainPage from './pages/MainPage/MainPage';
+import TrainSelectionPage from './pages/TrainSelectionPage/TrainSelectionPage';
+import SeatSelectionPage from './pages/SeatsSelectionPage/SeatSelectionPage';
+import PassengersPage from './pages/PassengersPage/PassengersPage';
+import PaymentOptionsPage from './pages/PaymentOptionsPage/PaymentOptionsPage';
+import OrderConfirmationPage from './pages/OrderConfirmationPage/OrderConfirmationPage';
+import SuccessfulOrderPage from './pages/SuccessfulOrderPage/SuccessfulOrderPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+
+import links from './data/links';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+   return (
+      <BrowserRouter>
+         <Routes>
+            <Route path={links.main} element={<MainPage />} />
+            <Route path={links.trains} element={<TrainSelectionPage />} />
+            <Route path={links.seats} element={<SeatSelectionPage />} />
+            <Route path={links.passengers} element={<PassengersPage />} />
+            <Route
+               path={links.paymentOptions}
+               element={<PaymentOptionsPage />}
+            />
+            <Route
+               path={links.confirmOrder}
+               element={<OrderConfirmationPage />}
+            />
+            <Route path={links.success} element={<SuccessfulOrderPage />} />
+            <Route path="*" element={<ErrorPage />} />
+         </Routes>
+      </BrowserRouter>
+   );
 }
 
-export default App
+export default App;

@@ -1,0 +1,32 @@
+@import '../../scss/mixins';
+.about {
+   padding: 9rem 19.625rem 7.1875rem 16.125rem;
+   min-width: 100%;
+   min-height: 51rem;
+   background: var(--color-main-light);
+   color: var(--color-main-dark);
+   &__title {
+      @include title;
+   }
+   &__text {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      border-left: solid 0.9rem var(--color-yellow-orange);
+
+      & p {
+         padding-left: 1.8rem;
+         @include font-no-color(var(--fw-4), var(--fs-24), var(--fh-28));
+      }
+
+      & p:not(:last-child) {
+         margin-bottom: 2.8rem;
+      }
+
+      & p:last-child {
+         font-weight: var(--fw-7);
+      }
+   }
+}
+
+
