@@ -194,14 +194,13 @@
    .body {
       margin: 9.5rem 0 19.5rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 8rem;
 
       .wrapper-main {
          width: 96rem;
       }
    }
-
-   // при ширине меньше 1150 прятать aside в бургер?
 
    @media only screen and (min-width: 1150px) and (max-width: 1399px) {
       .body {
